@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#1f1a24" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="Vinyl randomizer and library browser for your Discogs collection." />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Record Archive</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Discogs collection</p>
+          <h1>Record Archive</h1>
+        </div>
+        <button id="settingsButton" class="ghost-button" type="button">Discogs setup</button>
+      </header>
+
+      <nav class="tab-bar" aria-label="Main navigation">
+        <button class="tab-button active" data-page="libraryPage" type="button">Library</button>
+        <button class="tab-button" data-page="cratePage" type="button">Crate</button>
+        <button class="tab-button" data-page="randomPage" type="button">Randomize</button>
+      </nav>
+
+      <main class="content">
+        <section id="libraryPage" class="page active">
+          <div class="page-header">
+            <div>
+              <p class="panel-label">Full catalogue</p>
+              <h2>My library</h2>
+            </div>
+            <div class="library-summary">
+              <span id="libraryCount">0 records</span>
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <label class="search-field">
+              <span>Search</span>
+              <input id="librarySearch" type="search" placeholder="Search artist or album" />
+            </label>
+            <label class="select-field">
+              <span>Genre</span>
+              <select id="libraryGenreFilter">
+                <option value="all">All genres</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="libraryList" class="record-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="cratePage" class="page">
+          <div class="page-header">
+            <div>
+              <p class="panel-label">Virtual crate</p>
+              <h2>Browse the stack</h2>
+            </div>
+            <div class="crate-actions">
+              <button id="shuffleCrateButton" class="primary-button" type="button">Randomize crate</button>
+            </div>
+          </div>
+
+          <div class="crate-toolbar">
+            <button id="prevCrateButton" class="icon-button" type="button" aria-label="Previous record">←</button>
+            <select id="crateGenreFilter">
+              <option value="all">All genres</option>
+            </select>
+            <button id="sortCrateButton" class="secondary-button" type="button">A–Z</button>
+            <button id="nextCrateButton" class="icon-button" type="button" aria-label="Next record">→</button>
+          </div>
+
+          <article id="crateCard" class="crate-card" aria-live="polite">
+            <div class="crate-image-wrap">
+              <img id="crateImage" alt="Album art" />
+            </div>
+            <div class="crate-info">
+              <p id="crateArtist" class="artist">Artist</p>
+              <h3 id="crateTitle">Album title</h3>
+              <div class="meta-row">
+                <span id="crateYear">Year</span>
+                <span id="crateGenre">Genre</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section id="randomPage" class="page">
+          <div class="page-header centered">
+            <div>
+              <p class="panel-label">Quick pick</p>
+              <h2>Spin the catalogue</h2>
+            </div>
+          </div>
+
+          <button id="randomizeButton" class="hero-button" type="button">Randomize</button>
+
+          <article id="randomCard" class="random-card" aria-live="polite">
+            <div class="random-art-wrap">
+              <img id="randomImage" alt="Random album art" />
+            </div>
+            <div class="random-info">
+              <p id="randomArtist" class="artist">Artist</p>
+              <h3 id="randomTitle">Album title</h3>
+              <div class="meta-row">
+                <span id="randomYear">Year</span>
+                <span id="randomGenre">Genre</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="settingsModal" class="settings-modal">
+      <form id="settingsForm" method="dialog">
+        <div class="modal-header">
+          <div>
+            <p class="panel-label">Discogs settings</p>
+            <h2>Connect your library</h2>
+          </div>
+          <button id="closeModalButton" class="icon-button small" type="button" aria-label="Close settings">×</button>
+        </div>
+
+        <div class="form-grid">
+          <label>
+            <span>Discogs username</span>
+            <input id="discogsUsername" name="username" type="text" placeholder="your-discogs-name" required />
+          </label>
+          <label>
+            <span>Discogs personal token</span>
+            <input id="discogsToken" name="token" type="password" placeholder="token" required />
+          </label>
+        </div>
+
+        <p class="helper-text">
+          Create a personal access token in your Discogs profile and paste it here. The app fetches your collection and keeps it loaded in your browser.
+        </p>
+
+        <div class="modal-actions">
+          <button type="button" id="loadDemoButton" class="secondary-button">Use demo data</button>
+          <button type="submit" class="primary-button">Save & load</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>

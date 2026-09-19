@@ -1,0 +1,18 @@
+{
+  "name": "Vinyl Randomizer",
+  "short_name": "Vinyl",
+  "description": "Browse your Discogs library and randomize your record crate.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0f0c13",
+  "theme_color": "#1f1a24",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icons/record.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
