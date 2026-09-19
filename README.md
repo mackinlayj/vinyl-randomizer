@@ -1,6 +1,6 @@
 # Record Archive
 
-A polished iPad-friendly web app for browsing your Discogs collection, browsing a virtual crate, and discovering random records.
+A polished iPad-friendly web app for browsing your Discogs collection.
 
 ## Try it now
 
