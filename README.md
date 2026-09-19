@@ -2,6 +2,12 @@
 
 A polished iPad-friendly web app for browsing your Discogs collection, browsing a virtual crate, and discovering random records.
 
+## Try it now
+
+**[🎵 Open Record Archive](https://vinyl-randomizer.jacobmackinlay99.workers.dev)** — hosted on Cloudflare
+
+The app is live and ready to use. Connect your Discogs account to load your collection.
+
 ## Features
 
 - **Library view**: Browse your full collection sorted by artist, with album art, genre, and year
@@ -51,3 +57,17 @@ Alternatively, tap **Use demo data** to try the app with sample records.
 4. The app now works like a native app from your home screen
 
 The app stores your collection locally in the browser, so it persists even after closing Safari.
+
+## Deployment
+
+This project is deployed to **Cloudflare Workers**.
+
+- **Live URL:** https://vinyl-randomizer.jacobmackinlay99.workers.dev
+- **Build command:** (none — static files only)
+- **Output directory:** `/` (project root)
+
+To deploy your own version:
+1. Fork this repository
+2. Connect your GitHub account to Cloudflare Pages
+3. Select this repo and confirm settings
+4. Cloudflare will auto-deploy on every push
