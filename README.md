@@ -4,9 +4,9 @@ A polished iPad-friendly web app for browsing your Discogs collection.
 
 ## Try it now
 
-**[🎵 Open Record Archive](https://vinyl-randomizer.jacobmackinlay99.workers.dev)** — hosted on Cloudflare
+**[Open Record Archive](https://vinyl-randomizer.jacobmackinlay99.workers.dev)** — hosted on Cloudflare
 
-The app is live and ready to use. Connect your Discogs account to load your collection.
+The app is live and ready to use. Connect your Discogs account (using your username and personal token) to load your collection.
 
 ## Features
 
